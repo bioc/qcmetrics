@@ -25,11 +25,6 @@ LATEXFILES = *.aux\
 all: 
 	make vig
 
-setvars:
-ifeq (${R_HOME},)
-R_HOME= $(shell R RHOME)
-endif
-
 vig:
 	"$(R_HOME)/bin/R" CMD pdflatex qcmetrics.tex
 	bibtex qcmetrics
